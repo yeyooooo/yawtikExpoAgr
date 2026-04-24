@@ -125,10 +125,10 @@ export default function Hero({ onCtaClick }) {
                                     </div>
                                     <div>
                                         <div className="text-[10px] uppercase tracking-[0.28em] text-primary/90 font-bold">
-                                            Expo Agricola
+                                            {t.hero.panelTag}
                                         </div>
                                         <div className="text-white text-sm font-body font-semibold uppercase tracking-wider">
-                                            Ciudad Guzman y alrededores
+                                            {t.hero.panelLocation}
                                         </div>
                                     </div>
                                 </div>
