@@ -80,10 +80,10 @@ export const translations = {
         },
         stats: {
             items: [
-                { v: "From $24K", l: "Starting monthly investment" },
+                { v: "From $12K", l: "Starting monthly investment" },
                 { v: "2 fronts", l: "Field + corporate" },
                 { v: "1 system", l: "Content + ads" },
-                { v: "Cd. Guzman", l: "Expo Agricola focus" },
+                { v: "Ciudad Guzman y alrededores", l: "Expo Agricola focus" },
             ],
         },
         testimonials: {
@@ -110,10 +110,10 @@ export const translations = {
         },
         pricing: {
             badge: "Investment",
-            title: "Projects from $24,000 MXN / month.",
+            title: "Projects from $12,000 MXN / month.",
             sub: "A consultative base for agricultural companies that need better content, clearer messaging and a serious digital presence. Final scope is quoted directly according to coverage, filming frequency, ad spend and level of technical coordination.",
-            startingAt: "$24,000 MXN",
-            startingLabel: "Recommended starting point for Expo Agricola Ciudad Guzman leads.",
+            startingAt: "$12,000 MXN",
+            startingLabel: "Recommended starting point for Expo Agricola leads in Ciudad Guzman and surrounding areas.",
             includesTitle: "This base can include:",
             includes: [
                 "Commercial and communication diagnosis.",
@@ -243,10 +243,10 @@ export const translations = {
         },
         stats: {
             items: [
-                { v: "Desde $24K", l: "Inversion base mensual" },
+                { v: "Desde $12K", l: "Inversion base mensual" },
                 { v: "2 frentes", l: "Campo + corporativo" },
                 { v: "1 sistema", l: "Contenido + ads" },
-                { v: "Cd. Guzman", l: "Enfoque Expo Agricola" },
+                { v: "Ciudad Guzman y alrededores", l: "Enfoque Expo Agricola" },
             ],
         },
         testimonials: {
@@ -273,10 +273,10 @@ export const translations = {
         },
         pricing: {
             badge: "Inversion",
-            title: "Proyectos desde $24,000 MXN / mes.",
+            title: "Proyectos desde $12,000 MXN / mes.",
             sub: "Es una base consultiva para empresas agricolas que necesitan mejor contenido, mensaje mas claro y presencia digital seria. El alcance final se cotiza directo segun cobertura, frecuencia de grabacion, pauta y nivel de coordinacion tecnica.",
-            startingAt: "$24,000 MXN",
-            startingLabel: "Punto de arranque recomendado para leads de Expo Agricola Ciudad Guzman.",
+            startingAt: "$12,000 MXN",
+            startingLabel: "Punto de arranque recomendado para leads de Expo Agricola en Ciudad Guzman y alrededores.",
             includesTitle: "Esta base puede incluir:",
             includes: [
                 "Diagnostico comercial y de comunicacion.",

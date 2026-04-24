@@ -13,7 +13,7 @@ export default function Stats() {
                 testId="stats-video"
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,9,7,0.92)_0%,rgba(7,9,7,0.76)_35%,rgba(7,9,7,0.92)_100%)] z-0" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(156,182,104,0.14),transparent_28%)] z-0" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(138,164,77,0.14),transparent_28%)] z-0" />
             <div
                 className="absolute top-0 left-0 right-0 z-0 pointer-events-none"
                 style={{ height: 160, background: "linear-gradient(to bottom, #070907, transparent)" }}

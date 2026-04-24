@@ -12,7 +12,7 @@
         --card-foreground: 52 39% 96%;
         --popover: 108 14% 10%;
         --popover-foreground: 52 39% 96%;
-        --primary: 87 34% 58%;
+        --primary: 88 36% 47%;
         --primary-foreground: 105 24% 8%;
         --secondary: 103 12% 15%;
         --secondary-foreground: 52 39% 96%;
@@ -24,7 +24,7 @@
         --destructive-foreground: 0 0% 98%;
         --border: 102 9% 21%;
         --input: 102 9% 21%;
-        --ring: 87 34% 58%;
+        --ring: 88 36% 47%;
         --radius: 0px;
         --glass-bg: rgba(255, 255, 255, 0.04);
         --glass-border: rgba(255, 255, 255, 0.1);
@@ -44,7 +44,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background:
-            radial-gradient(circle at top left, rgba(156, 182, 104, 0.08) 0%, transparent 28%),
+            radial-gradient(circle at top left, rgba(138, 164, 77, 0.08) 0%, transparent 28%),
             radial-gradient(circle at top right, rgba(230, 202, 142, 0.08) 0%, transparent 24%),
             #070907;
         background-color: #070907;
@@ -62,10 +62,10 @@
         background: #070907;
     }
     ::-webkit-scrollbar-thumb {
-        background: rgba(156, 182, 104, 0.42);
+        background: rgba(138, 164, 77, 0.42);
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: rgba(156, 182, 104, 0.68);
+        background: rgba(138, 164, 77, 0.68);
     }
 }
 
@@ -92,7 +92,7 @@
         padding: 1px;
         background: linear-gradient(
             180deg,
-            rgba(156, 182, 104, 0.35) 0%,
+            rgba(138, 164, 77, 0.35) 0%,
             rgba(255, 255, 255, 0.1) 20%,
             rgba(255, 255, 255, 0) 40%,
             rgba(255, 255, 255, 0) 60%,
@@ -109,14 +109,14 @@
 
     .liquid-glass-strong {
         background:
-            linear-gradient(180deg, rgba(230, 202, 142, 0.18) 0%, rgba(156, 182, 104, 0.2) 100%),
-            rgba(156, 182, 104, 0.15);
+            linear-gradient(180deg, rgba(230, 202, 142, 0.18) 0%, rgba(138, 164, 77, 0.2) 100%),
+            rgba(138, 164, 77, 0.15);
         background-blend-mode: luminosity;
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
-        border: 1px solid rgba(156, 182, 104, 0.5);
+        border: 1px solid rgba(138, 164, 77, 0.5);
         box-shadow:
-            0 0 24px rgba(156, 182, 104, 0.16),
+            0 0 24px rgba(138, 164, 77, 0.16),
             inset 0 1px 1px rgba(255, 255, 255, 0.18);
         position: relative;
         overflow: hidden;
@@ -127,10 +127,10 @@
     }
     .liquid-glass-strong:hover {
         background:
-            linear-gradient(180deg, rgba(230, 202, 142, 0.22) 0%, rgba(156, 182, 104, 0.26) 100%),
-            rgba(156, 182, 104, 0.2);
+            linear-gradient(180deg, rgba(230, 202, 142, 0.22) 0%, rgba(138, 164, 77, 0.26) 100%),
+            rgba(138, 164, 77, 0.2);
         box-shadow:
-            0 0 30px rgba(156, 182, 104, 0.22),
+            0 0 30px rgba(138, 164, 77, 0.22),
             inset 0 1px 1px rgba(255, 255, 255, 0.25);
         transform: translateY(-1px);
     }
@@ -143,7 +143,7 @@
         background: linear-gradient(
             180deg,
             rgba(255, 255, 255, 0.6) 0%,
-            rgba(156, 182, 104, 0.36) 20%,
+            rgba(138, 164, 77, 0.36) 20%,
             rgba(255, 255, 255, 0) 40%,
             rgba(255, 255, 255, 0) 60%,
             rgba(230, 202, 142, 0.24) 80%,

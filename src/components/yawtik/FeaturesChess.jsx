@@ -60,7 +60,7 @@ function Row({ reverse, title, body, cta, img, videoSrc, label, onCtaClick, inde
                     />
                 ) : null}
 
-                <div className="absolute inset-0 z-20 bg-[linear-gradient(135deg,rgba(156,182,104,0.22),transparent_42%,rgba(230,202,142,0.08)_100%)]" />
+                <div className="absolute inset-0 z-20 bg-[linear-gradient(135deg,rgba(138,164,77,0.22),transparent_42%,rgba(230,202,142,0.08)_100%)]" />
                 <div className="absolute inset-x-0 bottom-0 z-20 h-40 bg-gradient-to-t from-[#070907] via-[#070907]/55 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 z-30 flex items-center justify-between gap-4 text-[10px] font-body font-bold uppercase tracking-[0.28em] text-white/75">
                     <span>{label}</span>

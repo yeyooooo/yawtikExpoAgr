@@ -19,7 +19,7 @@ export default function Methodology({ onCtaClick }) {
                 testId="methodology-video"
             />
             <div className="absolute inset-0 z-0 bg-[linear-gradient(180deg,rgba(7,9,7,0.95)_0%,rgba(7,9,7,0.62)_26%,rgba(7,9,7,0.72)_72%,rgba(7,9,7,0.94)_100%)]" />
-            <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_20%,rgba(156,182,104,0.14),transparent_30%)]" />
+            <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_20%,rgba(138,164,77,0.14),transparent_30%)]" />
 
             <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-10">
                 <div className="max-w-3xl">

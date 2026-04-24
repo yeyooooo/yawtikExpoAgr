@@ -13,7 +13,7 @@ export default function Hero({ onCtaClick }) {
             style={{
                 minHeight: "100svh",
                 background:
-                    "radial-gradient(circle at 18% 18%, rgba(156, 182, 104, 0.18) 0%, rgba(11, 16, 10, 0.28) 28%, rgba(7, 9, 7, 0.92) 66%, #070907 100%)",
+                    "radial-gradient(circle at 18% 18%, rgba(138, 164, 77, 0.18) 0%, rgba(11, 16, 10, 0.28) 28%, rgba(7, 9, 7, 0.92) 66%, #070907 100%)",
             }}
             data-testid="hero"
         >
@@ -128,7 +128,7 @@ export default function Hero({ onCtaClick }) {
                                             Expo Agricola
                                         </div>
                                         <div className="text-white text-sm font-body font-semibold uppercase tracking-wider">
-                                            Ciudad Guzman
+                                            Ciudad Guzman y alrededores
                                         </div>
                                     </div>
                                 </div>
