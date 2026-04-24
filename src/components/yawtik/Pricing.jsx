@@ -1,106 +1,54 @@
 import { motion } from "framer-motion";
-import { Check, X, ArrowUpRight } from "lucide-react";
-import { Switch } from "../ui/switch";
-import { useState } from "react";
+import { ArrowUpRight, Check, SlidersHorizontal } from "lucide-react";
 import { useLang } from "./i18n";
 
-function PlanCard({ plan, monthly, choose, onChoose, index, mostChosenLabel }) {
-    const [addon, setAddon] = useState(false);
-    const highlight = plan.highlight;
+function ListCard({ title, items, icon: Icon, accent = false }) {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.55, delay: index * 0.1 }}
-            className="relative"
-            data-testid={`plan-${index}`}
+        <div
+            className={`rounded-none p-7 md:p-8 h-full ${
+                accent
+                    ? "liquid-glass-strong text-black"
+                    : "liquid-glass text-white border border-white/8"
+            }`}
         >
-            {highlight && (
-                <div className="absolute -top-3 left-6 z-20 bg-primary text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5 shadow-[0_0_20px_rgba(37,99,235,0.5)]">
-                    <span className="inline-block w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
-                    {mostChosenLabel}
+            <div className="flex items-center gap-3 mb-6">
+                <div
+                    className={`flex h-10 w-10 items-center justify-center ${
+                        accent ? "bg-black/10 text-black" : "bg-primary text-black"
+                    }`}
+                >
+                    <Icon className="h-5 w-5" />
                 </div>
-            )}
-            <div
-                className={`relative p-8 flex flex-col rounded-none h-full ${
-                    highlight
-                        ? "liquid-glass-strong border-primary"
-                        : "liquid-glass border-l-2 border-primary/40"
-                }`}
-            >
-            <div className="mb-6">
-                <h3 className="text-2xl md:text-3xl font-heading italic text-white tracking-tight leading-none">
-                    {plan.name}
+                <h3 className={`text-2xl font-heading italic ${accent ? "text-black" : "text-white"}`}>
+                    {title}
                 </h3>
-                <p className="text-white/60 font-body font-light text-sm mt-2">
-                    {plan.tagline}
-                </p>
             </div>
 
-            <div className="flex items-baseline gap-2 mb-8 pb-6 border-b border-white/10">
-                <span className={`text-5xl md:text-6xl font-heading italic ${highlight ? "text-white" : "text-primary"}`}>
-                    {plan.price}
-                </span>
-                <span className="text-white/60 font-body font-medium text-sm uppercase tracking-widest">
-                    {monthly}
-                </span>
-            </div>
-
-            <ul className="flex flex-col gap-3 mb-6 flex-1">
-                {plan.includes.map((inc, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                        {inc.ok ? (
-                            <span className="w-5 h-5 bg-primary text-white flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <Check className="w-3 h-3" strokeWidth={3} />
-                            </span>
-                        ) : (
-                            <span className="w-5 h-5 bg-white/5 text-white/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <X className="w-3 h-3" strokeWidth={2} />
-                            </span>
-                        )}
+            <ul className="flex flex-col gap-4">
+                {items.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
                         <span
-                            className={`font-body text-sm ${inc.ok ? "text-white/90" : "text-white/30 line-through"}`}
+                            className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center ${
+                                accent ? "bg-black/12 text-black" : "bg-primary text-black"
+                            }`}
                         >
-                            {inc.t}
+                            <Check className="h-3 w-3" strokeWidth={3} />
+                        </span>
+                        <span className={`text-sm font-body leading-relaxed ${accent ? "text-black/78" : "text-white/76"}`}>
+                            {item}
                         </span>
                     </li>
                 ))}
             </ul>
-
-            <div className="flex items-center justify-between py-4 border-t border-white/10 mb-6">
-                <span className="text-white/70 font-body font-medium text-xs uppercase tracking-widest">
-                    {plan.addon}
-                </span>
-                <Switch
-                    checked={addon}
-                    onCheckedChange={setAddon}
-                    data-testid={`plan-${index}-addon-switch`}
-                    className="data-[state=checked]:bg-primary"
-                />
-            </div>
-
-            <button
-                onClick={onChoose}
-                className={`rounded-none px-6 py-3 inline-flex items-center justify-center gap-2 font-body font-bold uppercase tracking-widest text-xs transition ${
-                    highlight
-                        ? "bg-primary text-white hover:bg-primary/90"
-                        : "bg-white text-black hover:bg-white/90"
-                }`}
-                data-testid={`plan-${index}-cta`}
-            >
-                {choose}
-                <ArrowUpRight className="w-4 h-4" />
-            </button>
-            </div>
-        </motion.div>
+        </div>
     );
 }
 
 export default function Pricing({ onCtaClick }) {
     const { t } = useLang();
+
     return (
-        <section id="pricing" className="relative py-24 md:py-32 px-6 lg:px-10 border-t border-white/5" data-testid="pricing">
+        <section id="pricing" className="relative px-6 py-24 md:py-32 lg:px-10" data-testid="pricing">
             <div className="mx-auto max-w-6xl">
                 <div className="mb-14 text-left">
                     <div className="liquid-glass rounded-none inline-block px-3.5 py-1 mb-5">
@@ -108,27 +56,73 @@ export default function Pricing({ onCtaClick }) {
                             {t.pricing.badge}
                         </span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] max-w-3xl">
+                    <h2 className="max-w-4xl text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9]">
                         {t.pricing.title}
                     </h2>
-                    <p className="text-white/60 font-body font-light text-sm md:text-base mt-5 max-w-2xl">
+                    <p className="max-w-3xl mt-5 text-sm md:text-base text-white/62 font-body font-light">
                         {t.pricing.sub}
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-5 md:gap-4 pt-4">
-                    {t.pricing.plans.map((plan, i) => (
-                        <PlanCard
-                            key={plan.name}
-                            plan={plan}
-                            monthly={t.pricing.monthly}
-                            choose={t.pricing.choose}
-                            onChoose={onCtaClick}
-                            index={i}
-                            mostChosenLabel={t.pricing.mostChosen}
-                        />
-                    ))}
-                </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.25 }}
+                    transition={{ duration: 0.65 }}
+                    className="liquid-glass rounded-none border border-white/8 p-7 md:p-10"
+                >
+                    <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+                        <div className="lg:pr-8 lg:border-r lg:border-white/10">
+                            <div className="text-[10px] font-body font-bold uppercase tracking-[0.3em] text-primary/90">
+                                {t.pricing.badge}
+                            </div>
+                            <div className="mt-4 text-5xl md:text-6xl font-heading italic text-white leading-none">
+                                {t.pricing.startingAt}
+                            </div>
+                            <p className="mt-4 text-sm font-body font-light leading-relaxed text-white/70">
+                                {t.pricing.startingLabel}
+                            </p>
+                            <p className="mt-8 text-sm font-body font-light leading-relaxed text-white/58">
+                                {t.pricing.note}
+                            </p>
+
+                            <div className="mt-8 flex flex-col gap-4 sm:flex-row lg:flex-col">
+                                <button
+                                    onClick={onCtaClick}
+                                    className="liquid-glass-strong rounded-none px-6 py-3 inline-flex items-center justify-center gap-2 text-black font-body font-bold uppercase tracking-widest text-xs"
+                                    data-testid="pricing-cta-primary"
+                                >
+                                    {t.pricing.cta}
+                                    <ArrowUpRight className="w-4 h-4" />
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        const el = document.getElementById("contact");
+                                        if (el) el.scrollIntoView({ behavior: "smooth" });
+                                    }}
+                                    className="bg-white/6 border border-white/10 text-white rounded-none px-6 py-3 font-body font-bold uppercase tracking-widest text-xs hover:bg-white/10 transition"
+                                    data-testid="pricing-cta-secondary"
+                                >
+                                    {t.pricing.secondary}
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="grid gap-5 md:grid-cols-2">
+                            <ListCard
+                                title={t.pricing.includesTitle}
+                                items={t.pricing.includes}
+                                icon={Check}
+                            />
+                            <ListCard
+                                title={t.pricing.factorsTitle}
+                                items={t.pricing.factors}
+                                icon={SlidersHorizontal}
+                                accent
+                            />
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

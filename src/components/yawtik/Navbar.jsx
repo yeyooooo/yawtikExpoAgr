@@ -64,7 +64,7 @@ export default function Navbar({ onCtaClick }) {
                                 key={l}
                                 onClick={() => setLang(l)}
                                 className={`px-2 py-1 text-[10px] font-bold uppercase tracking-widest transition ${
-                                    lang === l ? "bg-primary text-white" : "text-white/60 hover:text-white"
+                                    lang === l ? "bg-primary text-black" : "text-white/60 hover:text-white"
                                 }`}
                                 data-testid={`lang-${l}`}
                             >
@@ -75,7 +75,7 @@ export default function Navbar({ onCtaClick }) {
 
                     <button
                         onClick={onCtaClick}
-                        className="hidden md:inline-flex items-center gap-2 bg-primary text-white rounded-none px-4 py-2 text-xs font-bold uppercase tracking-widest hover:bg-primary/90 transition"
+                        className="hidden md:inline-flex items-center gap-2 bg-primary text-black rounded-none px-4 py-2 text-xs font-bold uppercase tracking-widest hover:bg-primary/90 transition"
                         data-testid="navbar-cta"
                     >
                         {t.nav.cta}
@@ -112,7 +112,7 @@ export default function Navbar({ onCtaClick }) {
                                 setOpen(false);
                                 onCtaClick();
                             }}
-                            className="mt-3 inline-flex items-center justify-between bg-primary text-white rounded-none px-4 py-3 text-sm font-bold uppercase tracking-widest"
+                            className="mt-3 inline-flex items-center justify-between bg-primary text-black rounded-none px-4 py-3 text-sm font-bold uppercase tracking-widest"
                             data-testid="navbar-mobile-cta"
                         >
                             {t.nav.cta}
@@ -124,7 +124,7 @@ export default function Navbar({ onCtaClick }) {
                                     key={l}
                                     onClick={() => setLang(l)}
                                     className={`px-3 py-2 text-xs font-bold uppercase tracking-widest flex-1 ${
-                                        lang === l ? "bg-primary text-white" : "bg-white/5 text-white/60"
+                                        lang === l ? "bg-primary text-black" : "bg-white/5 text-white/60"
                                     }`}
                                     data-testid={`mobile-lang-${l}`}
                                 >

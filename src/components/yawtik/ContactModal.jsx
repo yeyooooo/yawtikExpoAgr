@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X, MessageCircle, Mail, ArrowUpRight } from "lucide-react";
+import { X, MessageCircle, Mail, ArrowUpRight, PhoneCall } from "lucide-react";
 import { useLang, CONTACT } from "./i18n";
 
 export default function ContactModal({ open, onClose }) {
     const { t } = useLang();
     const waUrl = `https://wa.me/${CONTACT.phone}?text=${encodeURIComponent(t.contact.whatsappMsg)}`;
+    const callUrl = `tel:+${CONTACT.phone}`;
     const mailUrl = `mailto:${CONTACT.email}?subject=${encodeURIComponent(t.contact.emailSubject)}&body=${encodeURIComponent(t.contact.emailBody)}`;
 
     return (
@@ -52,7 +53,7 @@ export default function ContactModal({ open, onClose }) {
                             </p>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-4">
+                        <div className="grid md:grid-cols-3 gap-4">
                             <a
                                 href={waUrl}
                                 target="_blank"
@@ -74,6 +75,29 @@ export default function ContactModal({ open, onClose }) {
                                     {t.contact.whatsappDesc}
                                 </div>
                                 <div className="text-primary font-body font-bold text-xs tracking-widest mt-4 uppercase">
+                                    {CONTACT.phoneDisplay}
+                                </div>
+                            </a>
+
+                            <a
+                                href={callUrl}
+                                onClick={onClose}
+                                className="liquid-glass rounded-none p-6 block group border border-white/10 hover:border-primary/50 transition"
+                                data-testid="contact-call-link"
+                            >
+                                <div className="flex items-start justify-between mb-4">
+                                    <div className="bg-white text-black w-10 h-10 flex items-center justify-center rounded-none">
+                                        <PhoneCall className="w-5 h-5" />
+                                    </div>
+                                    <ArrowUpRight className="w-5 h-5 text-white/70 group-hover:text-white transition" />
+                                </div>
+                                <div className="text-white font-body font-bold uppercase tracking-widest text-sm">
+                                    {t.contact.call}
+                                </div>
+                                <div className="text-white/60 font-body font-light text-xs mt-2">
+                                    {t.contact.callDesc}
+                                </div>
+                                <div className="text-white/70 font-body font-medium text-xs tracking-widest mt-4">
                                     {CONTACT.phoneDisplay}
                                 </div>
                             </a>

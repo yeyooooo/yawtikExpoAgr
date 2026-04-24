@@ -135,10 +135,10 @@ export default function Hero({ onCtaClick }) {
                                 <MapPinned className="h-5 w-5 text-white/55" />
                             </div>
 
-                            <div className="mt-8 grid gap-5 sm:grid-cols-2">
-                                <div>
+                                <div className="mt-8 grid gap-5 sm:grid-cols-2">
+                                    <div>
                                     <div className="text-[10px] uppercase tracking-[0.28em] text-white/45 font-bold">
-                                        Inversion base
+                                        {t.hero.panelBase}
                                     </div>
                                     <div className="mt-2 text-3xl font-heading italic text-white">
                                         {t.pricing.startingAt}
@@ -146,10 +146,10 @@ export default function Hero({ onCtaClick }) {
                                 </div>
                                 <div>
                                     <div className="text-[10px] uppercase tracking-[0.28em] text-white/45 font-bold">
-                                        Cobertura
+                                        {t.hero.panelCoverage}
                                     </div>
                                     <div className="mt-2 text-sm font-body leading-relaxed text-white/72">
-                                        Campo, contenido corporativo, pauta y coordinacion con asesores.
+                                        {t.hero.panelCoverageText}
                                     </div>
                                 </div>
                             </div>

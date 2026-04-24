@@ -7,10 +7,10 @@ import Methodology from "./components/yawtik/Methodology";
 import FeaturesChess from "./components/yawtik/FeaturesChess";
 import FeaturesGrid from "./components/yawtik/FeaturesGrid";
 import Stats from "./components/yawtik/Stats";
-import Testimonials from "./components/yawtik/Testimonials";
 import Pricing from "./components/yawtik/Pricing";
 import CTAFooter from "./components/yawtik/CTAFooter";
 import ContactModal from "./components/yawtik/ContactModal";
+import SectionDivider from "./components/yawtik/SectionDivider";
 
 function App() {
     const [contactOpen, setContactOpen] = useState(false);
@@ -22,13 +22,18 @@ function App() {
                 <Navbar onCtaClick={open} />
                 <main>
                     <Hero onCtaClick={open} />
+                    <SectionDivider />
                     <Methodology onCtaClick={open} />
+                    <SectionDivider />
                     <FeaturesChess onCtaClick={open} />
+                    <SectionDivider />
                     <FeaturesGrid />
+                    <SectionDivider />
                     <Stats />
-                    <Testimonials />
+                    <SectionDivider />
                     <Pricing onCtaClick={open} />
-                    <CTAFooter onCtaClick={open} />
+                    <SectionDivider />
+                    <CTAFooter />
                 </main>
                 <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
             </div>

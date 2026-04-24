@@ -1,5 +1,8 @@
 .App {
-    background: #0a0a0a;
+    background:
+        radial-gradient(circle at top left, rgba(156, 182, 104, 0.08) 0%, transparent 24%),
+        radial-gradient(circle at top right, rgba(230, 202, 142, 0.06) 0%, transparent 20%),
+        #070907;
     min-height: 100vh;
     overflow-x: hidden;
 }
